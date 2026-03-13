@@ -1,57 +1,171 @@
-# IPL Team Comparison Web Application
+🌐 IPL Analytics Web Application
 
-This project is a web application built with Flask that allows users to compare IPL teams. The application fetches data from an external API to display teams and perform comparisons.
+A Flask-based web application that consumes the IPL Analytics REST API and provides a simple interactive interface to explore team head-to-head statistics.
 
-## Features
+The application allows users to select two IPL teams and view their historical match record comparison using data provided by the backend API.
 
-- Home page displaying a form to select two IPL teams for comparison.
-- Fetches team data from a REST API.
-- Compares two selected teams and displays the results on the same page.
-- Basic error handling for API requests.
+This project demonstrates API consumption, Flask web development, and integration of frontend templates with backend services.
 
-## Project Structure
+🚀 Features
 
-- `app.py`: Main application file that contains Flask routes and API request logic.
-- `templates/index.html`: HTML template that renders the form and displays comparison results.
-- `requirements.txt`: Contains the Python dependencies for the project.
+🏏 Interactive team vs team comparison
+🌐 Web interface built with Flask and Jinja2 templates
+🔗 Integration with an external REST API
+📊 Dynamic dropdown selection of IPL teams
+⚡ Real-time API requests using the requests library
+📦 Clean HTML rendering of API responses
 
-## Prerequisites
+🧠 What This Project Demonstrates
 
-- Python 3.7 or higher
-- Flask and Requests libraries (install from `requirements.txt`)
+This project highlights the following backend and integration skills:
 
-## Installation
+API consumption using Python requests
+Flask-based web application development
+Dynamic HTML rendering with Jinja2 templates
+Handling API errors and request failures
+Client–server architecture using REST APIs
+Integration between frontend UI and backend analytics services
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/ipl-comparison-app.git
-   cd ipl-comparison-app
+📂 Project Structure
+api_use/
+│
+├── app.py                # Flask web application
+│
+├── templates/
+│     └── index.html      # Web interface template
+│
+├── requirements.txt      # Project dependencies
+│
+├── .gitignore
+├── LICENSE
+└── README.md
+⚙️ Architecture Overview
 
+The project works as a client application that consumes the IPL Analytics API.
 
-Install dependencies:
- pip install -r requirements.txt
+User Browser
+      │
+      ▼
+Flask Web Application
+(app.py)
+      │
+      │ HTTP Requests
+      ▼
+IPL Analytics REST API
+(http://127.0.0.1:5000)
+      │
+      ▼
+Analytics Engine
+(team_stats / player_stats)
+      │
+      ▼
+IPL Datasets
+Design Principles
 
+Separation between UI layer and analytics layer
+Use of external REST API for data retrieval
+Lightweight and simple frontend interface
+Clear client–server architecture
 
-Usage
-Start the Flask server:
- python app.py
+🔌 Application Workflow
 
-Open your browser and navigate to:
+1️⃣ The web application requests the list of IPL teams from the API
+
+GET /api/teams
+
+2️⃣ Teams are displayed in dropdown menus.
+
+3️⃣ The user selects two teams.
+
+4️⃣ The application sends a request to the backend API:
+
+GET /api/teamvteam
+
+5️⃣ The API response is rendered in the browser.
+
+📊 Example User Flow
+Step 1 — Open Application
 http://127.0.0.1:7000
+Step 2 — Select Teams
+Team 1 → Chennai Super Kings
+Team 2 → Delhi Daredevils
+Step 3 — View Result
 
+Example output:
 
-Select two teams from the dropdowns and click Find Track Record to view their comparison.
+total_matches: 25
+Chennai Super Kings: 15
+Delhi Daredevils: 10
+draws: 0
+🛠 Installation
+Clone repository
+git clone https://github.com/RudrTyagi1135/api_use.git
+cd api_use
+Install dependencies
+pip install -r requirements.txt
+Run the application
+python app.py
 
-API Endpoints
-The app relies on two API endpoints to fetch data. Ensure the following endpoints are available:
+Server will start at:
 
-GET /api/teams: Fetches the list of IPL teams.
-GET /api/teamvteam?team1={team1}&team2={team2}: Fetches the comparison result for the selected teams.
-Error Handling
-The application includes error handling to manage API failures and displays user-friendly messages on the webpage.
+http://127.0.0.1:7000
+⚠️ Important Requirement
 
-Contributing
-Feel free to open issues or submit pull requests if you would like to contribute to this project.
+This web application depends on the IPL Analytics API.
 
-License
-This project is licensed under the MIT License. See the LICENSE file for more information.
+Before running this project, ensure the API server is running.
+
+Start the API service:
+
+cd IPL_API_FLASK
+python app.py
+
+The API will run at:
+
+http://127.0.0.1:5000
+🧪 Example API Calls Used
+
+Get Teams
+
+http://127.0.0.1:5000/api/teams
+
+Team vs Team Record
+
+http://127.0.0.1:5000/api/teamvteam?team1=Mumbai Indians&team2=Chennai Super Kings
+📈 Potential Improvements
+
+Future enhancements could include:
+
+Team overall record interface
+Batsman analytics dashboard
+Bowler analytics dashboard
+Interactive charts for team statistics
+Frontend styling with Bootstrap
+Deployment of frontend and API services
+Docker containerization
+Authentication and user sessions
+
+🧰 Tech Stack
+Technology	Purpose
+Python	Programming language
+Flask	Web framework
+Jinja2	HTML template rendering
+Requests	API communication
+HTML	Web interface
+JSON	API response format
+🎯 Learning Outcomes
+
+This project helped build understanding of:
+
+REST API integration in web applications
+Client–server architecture
+Flask templating with Jinja2
+Handling HTTP requests and responses
+Building frontend interfaces for backend analytics systems
+
+👤 Author
+
+Rudra
+
+B.Tech Final Year Student
+Aspiring MLOps Engineer
