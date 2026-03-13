@@ -6,7 +6,24 @@ The application allows users to select two IPL teams and view their historical m
 
 This project demonstrates **API consumption**, **Flask web development**, and **integration of frontend templates with backend services**.
 
-This project acts as the **client interface** for the IPL Analytics API available in the companion repository.
+This project acts as the **client interface for the IPL Analytics API available in the companion repository**.
+
+---
+
+## 🔗 Related Project
+
+This web application depends on the backend API available here:
+
+**IPL Analytics REST API**
+
+https://github.com/RudrTyagi1135/IPL_API_FLASK
+
+The API provides:
+
+- Team head-to-head statistics  
+- Batsman analytics  
+- Bowler analytics  
+- Team performance records  
 
 ---
 
@@ -49,6 +66,29 @@ IPL_ANALYTICS_WEB_CLIENT/
 ├── .gitignore
 ├── LICENSE
 └── README.md
+```
+
+---
+
+## 🏗 System Architecture
+
+```
+User Browser
+      │
+      ▼
+Flask Web Client
+(IPL_ANALYTICS_WEB_CLIENT)
+      │
+      ▼
+IPL Analytics REST API
+(IPL_API_FLASK)
+      │
+      ▼
+Analytics Engine
+(team_stats / player_stats)
+      │
+      ▼
+IPL Datasets
 ```
 
 ---
@@ -141,8 +181,8 @@ draws: 0
 ### Clone repository
 
 ```bash
-git clone https://github.com/RudrTyagi1135/api_use.git
-cd api_use
+git clone https://github.com/RudrTyagi1135/IPL_Analytics_Web_Client.git
+cd IPL_Analytics_Web_Client
 ```
 
 ### Install dependencies
